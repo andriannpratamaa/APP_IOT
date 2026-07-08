@@ -17,7 +17,7 @@ class ChartRequest extends FormRequest
             'device_id' => 'nullable|exists:devices,id',
             'start_date' => 'nullable|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
-            'interval' => 'nullable|in:hour,day,week,month',
+            'interval' => 'nullable|in:minute,hour,day,week,month',
         ];
     }
 }

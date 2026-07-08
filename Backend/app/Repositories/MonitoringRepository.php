@@ -77,6 +77,7 @@ class MonitoringRepository
         $interval = $params['interval'] ?? 'hour';
 
         $dateFormat = match ($interval) {
+            'minute' => "DATE_FORMAT(recorded_at, '%Y-%m-%d %H:%i:00')",
             'hour' => "DATE_FORMAT(recorded_at, '%Y-%m-%d %H:00:00')",
             'day' => "DATE_FORMAT(recorded_at, '%Y-%m-%d')",
             'week' => "DATE_FORMAT(recorded_at, '%Y-%u')",

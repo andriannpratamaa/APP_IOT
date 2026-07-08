@@ -18,6 +18,7 @@ class Device extends Model
         'mac_address',
         'status',
         'last_seen',
+        'user_id',
     ];
 
     protected $casts = [

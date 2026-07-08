@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('firmware_version')->nullable();
             $table->string('ip_address')->nullable();
             $table->string('mac_address')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->enum('status', ['online', 'offline', 'warning'])->default('offline');
             $table->timestamp('last_seen')->nullable();
             $table->timestamps();
