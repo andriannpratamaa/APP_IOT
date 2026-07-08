@@ -36,9 +36,9 @@ class MonitoringService
         ]);
     }
 
-    public function getLatest()
+    public function getLatest(?int $deviceId = null)
     {
-        return $this->monitoringRepository->getLatest(1)->first();
+        return $this->monitoringRepository->getLatest(1, $deviceId)->first();
     }
 
     public function getHistory(array $filters): LengthAwarePaginator

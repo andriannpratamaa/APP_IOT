@@ -23,7 +23,7 @@ class DeviceSeeder extends Seeder
         $devices = [
             [
                 'device_code' => generateDeviceCode(),
-                'device_name' => 'ESP32 Panel Utama',
+                'device_name' => 'Device 1',
                 'ip_address' => '192.168.1.100',
                 'mac_address' => 'AA:BB:CC:DD:EE:01',
                 'firmware_version' => '1.0.0',
@@ -33,7 +33,7 @@ class DeviceSeeder extends Seeder
             ],
             [
                 'device_code' => generateDeviceCode(),
-                'device_name' => 'ESP32 Panel Cadangan',
+                'device_name' => 'Device 2',
                 'ip_address' => '192.168.1.101',
                 'mac_address' => 'AA:BB:CC:DD:EE:02',
                 'firmware_version' => '1.0.0',

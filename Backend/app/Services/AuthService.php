@@ -57,9 +57,9 @@ class AuthService
         ]);
     }
 
-    public function getDashboard(): array
+    public function getDashboard(?int $deviceId = null): array
     {
-        $latestMonitorings = $this->monitoringRepository->getLatest(1);
+        $latestMonitorings = $this->monitoringRepository->getLatest(1, $deviceId);
         $latestMonitoring = $latestMonitorings->first();
 
         return [

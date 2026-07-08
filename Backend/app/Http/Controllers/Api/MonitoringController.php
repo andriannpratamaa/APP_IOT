@@ -34,9 +34,10 @@ class MonitoringController extends Controller
         }
     }
 
-    public function latest(): JsonResponse
+    public function latest(Request $request): JsonResponse
     {
-        $data = $this->monitoringService->getLatest();
+        $deviceId = $request->input('device_id');
+        $data = $this->monitoringService->getLatest($deviceId);
 
         if (!$data) {
             return $this->error('Belum ada data monitoring', null, 404);

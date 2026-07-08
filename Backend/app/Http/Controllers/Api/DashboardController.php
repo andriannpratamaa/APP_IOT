@@ -7,6 +7,7 @@ use App\Http\Resources\DashboardResource;
 use App\Services\AuthService;
 use App\Traits\ApiResponse;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -16,9 +17,10 @@ class DashboardController extends Controller
         protected AuthService $authService,
     ) {}
 
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $data = $this->authService->getDashboard();
+        $deviceId = $request->input('device_id');
+        $data = $this->authService->getDashboard($deviceId);
 
         return $this->success(new DashboardResource($data));
     }

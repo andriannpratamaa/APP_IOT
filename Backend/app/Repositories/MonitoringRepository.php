@@ -13,10 +13,15 @@ class MonitoringRepository
         return Monitoring::create($data);
     }
 
-    public function getLatest(int $limit = 1)
+    public function getLatest(int $limit = 1, ?int $deviceId = null)
     {
-        return Monitoring::with('device')
-            ->latest('recorded_at')
+        $query = Monitoring::with('device');
+
+        if ($deviceId) {
+            $query->where('device_id', $deviceId);
+        }
+
+        return $query->latest('recorded_at')
             ->limit($limit)
             ->get();
     }
