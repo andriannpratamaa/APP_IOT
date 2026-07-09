@@ -26,8 +26,11 @@ class MonitoringExport implements FromView, WithColumnWidths, WithStyles
             $query->where('device_id', $this->params['device_id']);
         }
 
-        $query->where('recorded_at', '>=', $this->params['start_date'])
-              ->where('recorded_at', '<=', $this->params['end_date'] . ' 23:59:59')
+        $startDate = \Carbon\Carbon::parse($this->params['start_date'] ?? now()->subDay())->startOfDay();
+        $endDate = \Carbon\Carbon::parse($this->params['end_date'] ?? now())->endOfDay();
+
+        $query->where('recorded_at', '>=', $startDate)
+              ->where('recorded_at', '<=', $endDate)
               ->orderBy('recorded_at');
 
         $data = $query->get();
@@ -48,7 +51,6 @@ class MonitoringExport implements FromView, WithColumnWidths, WithStyles
             'F' => 15,
             'G' => 12,
             'H' => 12,
-            'I' => 12,
         ];
     }
 
