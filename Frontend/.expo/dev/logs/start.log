@@ -227,3 +227,9 @@
 {"_e":"metro:client_log","_t":1783576891924,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
 {"_e":"metro:client_log","_t":1783576892967,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
 {"_e":"metro:bundling:started","_t":1783576930577,"id":"21","platform":"web","environment":null,"entry":"index.js"}
+{"_e":"root:init","_t":1783586726593,"format":"v0-jsonl","version":"57.0.6"}
+{"_e":"env:mode","_t":1783586726595,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1783586726600,"mode":"development","files":["../..\\..\\.env"],"env":{"EXPO_PUBLIC_API_URL":"http://localhost:8000/api"}}
+{"_e":"devserver:start","_t":1783586727436,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\src\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1783586728354,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1783586729931,"plugins":[]}
